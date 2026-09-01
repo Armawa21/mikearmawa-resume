@@ -13,9 +13,9 @@
 <style>
   :root{
     --ink:#0E202E;
-    --navy:#5A5A5A;
-    --navy-2:#6E6E6E;
-    --navy-3:#828282;
+    --navy:#0E202E;
+    --navy-2:#17293A;
+    --navy-3:#20364A;
     --green:#037D6E;
     --green-lt:#3FA396;
     --gray-700:#5A5A5A;
@@ -25,8 +25,8 @@
     --gray-100:#EDEDED;
     --paper:#F3F3F3;
     --white:#FFFFFF;
-    --text:#242424;
-    --line: rgba(90,90,90,0.16);
+    --text:#4A4A4A;
+    --line: rgba(14,32,46,0.14);
     --line-dark: rgba(255,255,255,0.16);
     --maxw: 1160px;
     --maxw-narrow: 760px;
@@ -96,13 +96,13 @@
 
   /* ===================== top tab navigation ===================== */
   .site-nav{
-    position:fixed; top:0; left:0; right:0; z-index:100; height:var(--nav-h);
+    position:fixed; top:0; left:0; right:0; z-index:130; height:var(--nav-h);
     display:flex; align-items:center; justify-content:space-between; padding:0 48px;
     background:transparent; border-bottom:1px solid transparent;
     transition: background .35s ease, border-color .35s ease, box-shadow .35s ease;
   }
   .site-nav.scrolled{
-    background:rgba(90,90,90,0.94); backdrop-filter: blur(10px);
+    background:rgba(14,32,46,0.94); backdrop-filter: blur(10px);
     border-bottom-color: var(--line-dark); box-shadow: 0 8px 24px rgba(0,0,0,0.16);
   }
   .nav-logo{ display:flex; align-items:center; text-decoration:none; }
@@ -177,7 +177,7 @@
   .hero-mark{ margin-bottom:26px; }
   .hero-mark img{ height:84px; width:auto; display:block; filter: drop-shadow(0 2px 10px rgba(0,0,0,0.35)); }
   .hero-role{ font-size:14.5px; color:var(--gray-300); padding-bottom:26px; border-bottom:1px solid var(--line-dark); margin-bottom:26px; width:100%; }
-  .hero-fields{ display:grid; grid-template-columns:1fr 1fr; gap:24px 28px; width:100%; text-align:center; }
+  .hero-fields{ display:flex; flex-direction:column; gap:18px; width:100%; text-align:center; }
   .hero-fields .field .fl{ font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--green-lt); margin-bottom:6px; }
   .hero-fields .field .fv{ font-size:14.5px; color:var(--gray-200); text-decoration:none; }
   .hero-fields .field .fv:hover{color:var(--white);}
@@ -249,11 +249,11 @@
   }
   .client-logo img:hover{ opacity:1; }
   /* individually balanced so every mark reads the same visual size */
-  .client-logo:nth-child(1) img{ max-height:40px; } /* Sofitel */
-  .client-logo:nth-child(2) img{ max-height:58px; } /* St. Regis */
-  .client-logo:nth-child(3) img{ max-height:56px; } /* Six Senses */
-  .client-logo:nth-child(4) img{ max-height:54px; } /* The Ritz-Carlton */
-  .client-logo:nth-child(5) img{ max-height:30px; } /* Soori Bali */
+  .client-logo:nth-child(1) img{ max-height:46px; } /* Sofitel */
+  .client-logo:nth-child(2) img{ max-height:67px; } /* St. Regis */
+  .client-logo:nth-child(3) img{ max-height:64px; } /* Six Senses */
+  .client-logo:nth-child(4) img{ max-height:62px; } /* The Ritz-Carlton */
+  .client-logo:nth-child(5) img{ max-height:35px; } /* Soori Bali */
 
   /* ===================== skills & languages ===================== */
   .skills-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; max-width:900px; margin:0 auto; }
@@ -363,7 +363,7 @@
     .hero-main{grid-template-columns:1fr; gap:28px;}
     .hero-portrait{min-height:320px;}
     .hero-card{padding:36px 28px;}
-    .hero-fields{grid-template-columns:1fr 1fr;}
+    .hero-fields{gap:16px;}
     :root{ --tl-years-w:100px; --tl-gap:14px; --tl-spine-w:14px; }
     .tl-years, .edu-years{ font-size:13px; }
     .skills-grid{grid-template-columns:1fr; gap:36px;}
@@ -416,7 +416,7 @@
           <div class="hero-mark">
             <img src="assets/logo-mark.png" alt="Mike Armawa logo">
           </div>
-          <div class="hero-role">Hospitality — Sales &amp; Marketing — Creative Content</div>
+          <div class="hero-role">Hospitality &middot; Sales &amp; Marketing &middot; Creative Content</div>
           <div class="hero-fields">
             <div class="field">
               <div class="fl">Phone</div>
@@ -429,10 +429,6 @@
             <div class="field">
               <div class="fl">Address</div>
               <div class="fv">Bali, Indonesia</div>
-            </div>
-            <div class="field">
-              <div class="fl">Date of Birth</div>
-              <div class="fv">March 21st, 1999</div>
             </div>
           </div>
         </div>
@@ -468,9 +464,9 @@
     <div class="section-inner">
       <div class="about-copy reveal">
         <p class="section-label">Hello, I'm Mike</p>
-        <p>Creative and strategic marketing professional with a strong background in luxury hospitality, brand storytelling, digital marketing, and visual communication. Experienced with international luxury brands including Ritz-Carlton, Six Senses, and Soori, with expertise across brand marketing, content creation, social media, digital campaigns, and creative production.</p>
-        <p>I combine creative thinking with strategic and data-driven marketing to build compelling brand experiences, strengthen brand positioning, and engage the right audiences. Experienced in working across multi-property environments, collaborating with global brand teams, and delivering marketing initiatives from concept to execution.</p>
-        <p>Passionate about luxury hospitality, creativity, and meaningful brand experiences, with a continuous drive to create impactful work and contribute to forward-thinking brands.</p>
+        <p>I'm a creative and strategic marketing professional with a background in luxury hospitality, brand storytelling, and visual communication.</p>
+        <p>With experience at Ritz-Carlton, Six Senses, and Soori, I work across creative direction, photography, videography, design, social media, and digital marketing to build strong and engaging brand experiences.</p>
+        <p>I combine creative thinking with marketing strategy to turn ideas into meaningful content, strengthen brand identity, and connect with the right audience.</p>
         <div class="about-cta btn-row">
           <a class="btn" href="https://linktr.ee/mikearmawa" target="_blank" rel="noopener">Link Master</a>
           <a class="btn" href="https://mikearmawa.blogspot.com/" target="_blank" rel="noopener">Blogs Site</a>
