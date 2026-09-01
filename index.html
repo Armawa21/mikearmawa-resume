@@ -7,34 +7,39 @@
 <meta name="description" content="Mike Armawa — Graphics & Content Marketing Manager, Soori Bali. Hospitality, Sales & Marketing, Creative Content.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --gray-950:#171614;
-    --gray-900:#211F1C;
-    --gray-800:#332F2A;
-    --gray-700:#4C4944;
-    --gray-600:#6A675F;
-    --gray-500:#918E85;
-    --gray-400:#ACA99F;
-    --gray-300:#D7D4CB;
-    --gray-200:#E6E3DB;
-    --gray-100:#F0EEE7;
-    --paper:#F7F5F0;
+    --navy:#0E202E;
+    --navy-2:#17293A;
+    --navy-3:#20364A;
+    --green:#037D6E;
+    --green-lt:#3FA396;
+    --gray-700:#5A5A5A;
+    --gray-500:#7C7C7C;
+    --gray-300:#C9C9C9;
+    --gray-200:#DDDDDD;
+    --gray-100:#EDEDED;
+    --paper:#F3F3F3;
     --white:#FFFFFF;
-    --text:#242220;
-    --line: rgba(36,34,32,0.12);
-    --line-dark: rgba(230,227,219,0.15);
+    --text:#242424;
+    --line: rgba(14,32,46,0.14);
+    --line-dark: rgba(255,255,255,0.16);
     --maxw: 1160px;
     --maxw-narrow: 760px;
     --nav-h: 76px;
     --radius: 3px;
+    --serif: 'Baskerville Old Face','Baskerville','Libre Baskerville',Georgia,serif;
+    --sans: Arial, Helvetica, sans-serif;
+    --tl-years-w: 170px;
+    --tl-gap: 26px;
+    --tl-spine-w: 18px;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
     margin:0;
-    font-family:'Public Sans', system-ui, sans-serif;
+    font-family:var(--sans);
     color:var(--text);
     background:var(--paper);
     font-size:16px;
@@ -42,18 +47,18 @@
     -webkit-font-smoothing:antialiased;
   }
   h1,h2,h3,h4{
-    font-family:'Fraunces', serif;
-    font-weight:500;
+    font-family:var(--serif);
+    font-weight:400;
     margin:0;
-    letter-spacing:-0.01em;
-    color:var(--gray-900);
+    letter-spacing:0;
+    color:var(--navy);
   }
   a{color:inherit;}
   img{max-width:100%;display:block;}
   button{font-family:inherit;}
-  .section{padding:104px 0; scroll-margin-top: var(--nav-h);}
+  .section{padding:100px 0; scroll-margin-top: var(--nav-h);}
   .section-inner{max-width:var(--maxw); margin:0 auto; padding:0 48px;}
-  .bg-dark{background:var(--gray-950); color:var(--gray-300);}
+  .bg-dark{background:var(--navy); color:var(--gray-300);}
   .bg-dark h1,.bg-dark h2,.bg-dark h3{color:var(--white);}
   .bg-alt{background:var(--gray-100);}
   .bg-paper{background:var(--paper);}
@@ -61,21 +66,17 @@
   /* ===================== consistent section head ===================== */
   .section-head{ text-align:center; max-width:640px; margin:0 auto 60px; }
   .section-label{
-    font-family:'Public Sans', sans-serif; font-weight:600;
-    font-size:12px; letter-spacing:.22em; text-transform:uppercase;
-    color:var(--gray-500); margin:0 0 16px;
+    font-family:var(--sans); font-weight:700;
+    font-size:12px; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--green); margin:0 0 16px;
   }
-  .bg-dark .section-label{color:var(--gray-400);}
+  .bg-dark .section-label{color:var(--green-lt);}
   .section-heading{
-    font-family:'Fraunces', serif; font-weight:500;
-    font-size:clamp(28px,3.2vw,38px);
-    color:var(--gray-900);
+    font-family:var(--serif); font-weight:400;
+    font-size:clamp(28px,3.2vw,40px);
+    color:var(--navy);
   }
   .bg-dark .section-heading{color:var(--white);}
-  .section-heading + .section-sub{
-    margin-top:16px; font-size:15.5px; color:var(--gray-600); line-height:1.7;
-  }
-  .bg-dark .section-heading + .section-sub{color:var(--gray-400);}
 
   /* ===================== reveal-on-scroll ===================== */
   .reveal{ opacity:0; transform:translateY(20px); transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1); }
@@ -98,17 +99,18 @@
     transition: background .35s ease, border-color .35s ease, box-shadow .35s ease;
   }
   .site-nav.scrolled{
-    background:rgba(23,22,20,0.94); backdrop-filter: blur(10px);
+    background:rgba(14,32,46,0.94); backdrop-filter: blur(10px);
     border-bottom-color: var(--line-dark); box-shadow: 0 8px 24px rgba(0,0,0,0.16);
   }
-  .nav-name{ font-family:'Fraunces', serif; font-size:19px; color:var(--white); text-decoration:none; letter-spacing:-.01em; }
+  .nav-logo{ display:flex; align-items:center; text-decoration:none; }
+  .nav-logo img{ height:26px; width:auto; }
   .nav-tabs{display:flex; gap:32px; list-style:none; margin:0; padding:0;}
   .nav-tabs a{
     position:relative; text-decoration:none; color:rgba(255,255,255,0.72);
-    font-size:12px; letter-spacing:.1em; text-transform:uppercase; padding:8px 0;
+    font-family:var(--sans); font-size:12px; letter-spacing:.1em; text-transform:uppercase; padding:8px 0;
     transition: color .25s ease;
   }
-  .nav-tabs a::after{ content:''; position:absolute; left:0; right:100%; bottom:0; height:1px; background:var(--white); transition: right .3s cubic-bezier(.22,.61,.36,1); }
+  .nav-tabs a::after{ content:''; position:absolute; left:0; right:100%; bottom:0; height:1px; background:var(--green-lt); transition: right .3s cubic-bezier(.22,.61,.36,1); }
   .nav-tabs a:hover{color:var(--white);}
   .nav-tabs a:hover::after, .nav-tabs a.active::after{right:0;}
   .nav-tabs a.active{color:var(--white);}
@@ -120,7 +122,7 @@
   .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
   .mobile-menu{
-    position:fixed; inset:0; z-index:110; background:var(--gray-950);
+    position:fixed; inset:0; z-index:110; background:var(--navy);
     display:flex; flex-direction:column; align-items:flex-start; justify-content:center;
     gap:4px; padding:0 40px;
     clip-path: circle(0px at calc(100% - 44px) 40px);
@@ -129,7 +131,7 @@
   }
   .mobile-menu.open{ clip-path: circle(150% at calc(100% - 44px) 40px); pointer-events:auto; }
   .mobile-menu a{
-    text-decoration:none; color:var(--gray-300); font-family:'Fraunces',serif; font-size:28px; font-weight:400;
+    text-decoration:none; color:var(--gray-300); font-family:var(--serif); font-size:28px; font-weight:400;
     padding:11px 0; opacity:0; transform:translateX(14px);
     transition: opacity .4s ease, transform .4s ease, color .25s ease;
   }
@@ -143,40 +145,40 @@
   .mobile-menu.open a:nth-child(7){transition-delay:.38s;}
   .mobile-menu a:hover{color:var(--white);}
 
-  /* ===================== buttons ===================== */
+  /* ===================== buttons — all three share one style ===================== */
   .btn{
     display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:999px;
-    font-size:13px; letter-spacing:.04em; text-decoration:none;
-    border:1px solid var(--line-dark); color:var(--white);
+    font-family:var(--sans); font-size:13px; letter-spacing:.03em; text-decoration:none;
+    border:1.5px solid var(--navy); color:var(--navy); background:transparent;
     transition:background .3s ease, color .3s ease, border-color .3s ease, transform .3s ease;
   }
-  .btn:hover{background:var(--white); border-color:var(--white); color:var(--gray-950); transform:translateY(-2px);}
-  .btn.on-light{color:var(--gray-900); border-color:var(--gray-800);}
-  .btn.on-light:hover{background:var(--gray-900); border-color:var(--gray-900); color:var(--white);}
-  .btn.solid{background:var(--gray-800); border-color:var(--gray-800);}
-  .btn.solid:hover{background:var(--gray-700); border-color:var(--gray-700); color:var(--white); transform:translateY(-2px);}
+  .btn:hover{background:var(--navy); color:var(--white); transform:translateY(-2px);}
+  .btn.on-dark{ border-color:var(--white); color:var(--white); }
+  .btn.on-dark:hover{ background:var(--white); color:var(--navy); }
+  .btn.cta{ background:var(--navy); color:var(--white); }
+  .btn.cta:hover{ background:var(--green); border-color:var(--green); color:var(--white); }
   .btn-row{display:flex; justify-content:center; flex-wrap:wrap; gap:14px;}
 
   /* ===================== hero ===================== */
   .hero{ padding-top: calc(var(--nav-h) + 72px); padding-bottom:0; }
   .hero-main{ display:grid; grid-template-columns:0.82fr 1fr; gap:56px; align-items:stretch; }
-  .hero-portrait{ position:relative; overflow:hidden; border-radius:var(--radius); }
-  .hero-portrait img{ width:100%; height:100%; object-fit:cover; transition:transform .8s cubic-bezier(.22,.61,.36,1); min-height:420px; }
+  .hero-portrait{ position:relative; overflow:hidden; border-radius:var(--radius); align-self:stretch; }
+  .hero-portrait img{ width:100%; height:100%; object-fit:cover; object-position:center; display:block; transition:transform .8s cubic-bezier(.22,.61,.36,1); }
   .hero-portrait:hover img{transform:scale(1.04);}
-  .hero-portrait .frame{ position:absolute; inset:14px; border:1px solid rgba(230,228,220,0.28); pointer-events:none; }
+  .hero-portrait .frame{ position:absolute; inset:14px; border:1px solid rgba(255,255,255,0.28); pointer-events:none; }
   .hero-card{
-    background:var(--gray-900); border:1px solid var(--line-dark); border-radius:var(--radius);
-    padding:48px 44px; display:flex; flex-direction:column; justify-content:center;
+    background:var(--navy-2); border:1px solid var(--line-dark); border-radius:var(--radius);
+    padding:48px 44px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+    align-self:stretch;
   }
-  .hero-mark{ display:flex; align-items:center; gap:12px; margin-bottom:22px; }
-  .hero-mark .mono{
-    width:38px; height:38px; border:1px solid var(--gray-400); border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Fraunces',serif; font-size:15px; color:var(--gray-200);
+  .hero-mark{ display:flex; flex-direction:column; align-items:center; gap:14px; margin-bottom:26px; }
+  .hero-mark .logo-chip{
+    background:var(--white); border-radius:16px; padding:14px 18px;
+    display:inline-flex; align-items:center; justify-content:center;
   }
-  .hero-mark .wordmark{ font-family:'Fraunces',serif; font-size:20px; letter-spacing:.04em; color:var(--white); }
-  .hero-role{ font-size:14.5px; color:var(--gray-400); padding-bottom:26px; border-bottom:1px solid var(--line-dark); margin-bottom:26px; }
-  .hero-fields{ display:grid; grid-template-columns:1fr 1fr; gap:24px 28px; }
+  .hero-mark .logo-chip img{ height:64px; width:auto; display:block; }
+  .hero-role{ font-size:14.5px; color:var(--gray-300); padding-bottom:26px; border-bottom:1px solid var(--line-dark); margin-bottom:26px; width:100%; }
+  .hero-fields{ display:grid; grid-template-columns:1fr 1fr; gap:24px 28px; width:100%; text-align:center; }
   .hero-fields .field .fl{ font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gray-500); margin-bottom:6px; }
   .hero-fields .field .fv{ font-size:14.5px; color:var(--gray-200); text-decoration:none; }
   .hero-fields .field .fv:hover{color:var(--white);}
@@ -192,7 +194,7 @@
     transition:background .3s ease, color .3s ease, border-color .3s ease;
   }
   .social-icons a svg{ width:16px; height:16px; }
-  .social-icons a:hover{ background:var(--white); color:var(--gray-950); border-color:var(--white); }
+  .social-icons a:hover{ background:var(--white); color:var(--navy); border-color:var(--white); }
 
   /* ===================== about ===================== */
   .about-copy{ max-width:var(--maxw-narrow); margin:0 auto; text-align:center; }
@@ -200,45 +202,59 @@
   .about-copy p + p{ margin-top:20px; }
   .about-cta{ margin-top:40px; }
 
-  /* ===================== experience timeline ===================== */
-  .timeline{max-width:900px; margin:0 auto;}
-  .tl-item{
-    display:grid; grid-template-columns:180px 1fr; gap:40px; padding:32px 0;
-    border-top:1px solid var(--line); transition: background .3s ease;
+  /* ===================== experience + education timeline ===================== */
+  .timeline{ max-width:900px; margin:0 auto; position:relative; }
+  .timeline::before{
+    content:''; position:absolute; top:6px; bottom:6px;
+    left: calc(var(--tl-years-w) + var(--tl-gap) + (var(--tl-spine-w) / 2) - 1px);
+    width:2px; background:var(--line);
   }
-  .tl-item:hover{background:rgba(36,34,32,0.025);}
-  .tl-item:last-child{border-bottom:1px solid var(--line);}
-  .tl-years{font-family:'Fraunces', serif; color:var(--gray-600); font-size:15px; padding-top:2px;}
-  .tl-role h3{font-size:21px; font-weight:500;}
-  .tl-role .tl-company{font-size:13.5px; color:var(--gray-700); margin-top:4px; font-weight:600; letter-spacing:.02em;}
-  .tl-role ul{margin:15px 0 0; padding-left:18px; font-size:14.5px; color:#3d3b36;}
+  .tl-item{
+    display:grid; grid-template-columns: var(--tl-years-w) var(--tl-spine-w) 1fr;
+    gap: var(--tl-gap); padding:26px 0; position:relative;
+  }
+  .tl-years{ text-align:right; font-family:var(--serif); color:var(--green); font-size:15px; padding-top:2px; }
+  .tl-spine{ display:flex; justify-content:center; }
+  .tl-dot{ width:11px; height:11px; border-radius:50%; background:var(--paper); border:2px solid var(--green); margin-top:6px; position:relative; z-index:1; }
+  .tl-role{ text-align:left; }
+  .tl-role h3{font-size:21px; font-weight:400;}
+  .tl-role .tl-company{font-size:13.5px; color:var(--gray-700); margin-top:4px; font-weight:700; letter-spacing:.02em;}
+  .tl-role ul{margin:15px 0 0; padding-left:18px; font-size:14.5px; color:#3a3a3a; text-align:left;}
   .tl-role ul li{margin-bottom:8px;}
-  .tl-role ul li::marker{color:var(--gray-500);}
+  .tl-role ul li::marker{color:var(--green);}
 
-  /* ===================== education ===================== */
+  /* education uses the same grid/spine as experience */
   .edu-block{ max-width:900px; margin:0 auto; }
-  .edu-head{display:grid; grid-template-columns:180px 1fr; gap:40px;}
-  .edu-years{font-family:'Fraunces',serif; color:var(--gray-600); font-size:15px;}
-  .edu-head h3{font-size:21px; font-weight:500;}
-  .edu-head .edu-school{font-size:13.5px; color:var(--gray-700); font-weight:600; margin-top:4px; letter-spacing:.02em;}
-  .edu-body{margin-top:14px; font-size:14.5px; max-width:66ch; color:#3d3b36;}
+  .edu-head{ display:grid; grid-template-columns: var(--tl-years-w) var(--tl-spine-w) 1fr; gap: var(--tl-gap); }
+  .edu-years{ text-align:right; font-family:var(--serif); color:var(--green); font-size:15px; padding-top:2px; }
+  .edu-spine{ display:flex; justify-content:center; }
+  .edu-head .tl-dot{ margin-top:6px; }
+  .edu-body-col{ text-align:left; }
+  .edu-body-col h3{font-size:21px; font-weight:400;}
+  .edu-body-col .edu-school{font-size:13.5px; color:var(--gray-700); font-weight:700; margin-top:4px; letter-spacing:.02em;}
+  .edu-body{margin-top:14px; font-size:14.5px; max-width:66ch; color:#3a3a3a;}
   .edu-projects{margin-top:26px; display:flex; flex-direction:column; gap:22px;}
   .edu-project{padding-left:20px; border-left:2px solid var(--line); transition:border-color .3s ease;}
-  .edu-project:hover{border-left-color:var(--gray-600);}
-  .edu-project h4{font-size:15.5px; font-weight:600; font-family:'Public Sans',sans-serif; color:var(--gray-900);}
-  .edu-project p{font-size:14px; color:#4c4a44; margin:8px 0 0;}
-  .edu-project a{display:inline-block; margin-top:10px; font-size:12.5px; color:var(--gray-700); text-decoration:underline; text-underline-offset:3px;}
+  .edu-project:hover{border-left-color:var(--green);}
+  .edu-project h4{font-size:15.5px; font-weight:700; font-family:var(--sans); color:var(--navy);}
+  .edu-project p{font-size:14px; color:#4a4a4a; margin:8px 0 0;}
+  .edu-project a{display:inline-block; margin-top:10px; font-size:12.5px; color:var(--green); text-decoration:underline; text-underline-offset:3px;}
 
   /* ===================== career journey / clients ===================== */
-  .clients-row{ display:flex; flex-wrap:wrap; justify-content:center; gap:56px; align-items:center; }
-  .clients-row img{ max-height:46px; width:auto; filter:grayscale(1) brightness(2.3); opacity:.75; transition:opacity .3s ease, filter .3s ease; }
-  .clients-row img:hover{ opacity:1; filter:grayscale(1) brightness(3); }
+  .clients-row{ display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:52px; }
+  .client-logo{ height:44px; display:flex; align-items:center; justify-content:center; }
+  .client-logo img{
+    max-height:44px; max-width:150px; width:auto; height:auto;
+    filter: brightness(0) invert(1); opacity:.82;
+    transition:opacity .3s ease;
+  }
+  .client-logo img:hover{ opacity:1; }
 
   /* ===================== skills & languages ===================== */
   .skills-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; max-width:900px; margin:0 auto; }
   .skills-col h3{
     text-align:center; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase;
-    color:var(--gray-600); font-family:'Public Sans',sans-serif; font-weight:600; margin-bottom:18px;
+    color:var(--gray-700); font-family:var(--sans); font-weight:700; margin-bottom:18px;
   }
   .skills-col ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;}
   .skills-col li{
@@ -246,21 +262,21 @@
     background:var(--white); border:1px solid var(--line); border-radius:var(--radius);
     transition: border-color .3s ease, transform .3s ease;
   }
-  .bg-alt .skills-col li{background:rgba(255,255,255,0.6);}
-  .skills-col li:hover{border-color:var(--gray-500); transform:translateY(-2px);}
+  .bg-alt .skills-col li{background:var(--white);}
+  .skills-col li:hover{border-color:var(--green); transform:translateY(-2px);}
   .lang-row{ margin-top:48px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap; max-width:900px; margin-left:auto; margin-right:auto; }
   .lang-item{
     flex:1 1 220px; text-align:center; padding:20px; background:var(--white);
     border:1px solid var(--line); border-radius:var(--radius);
   }
-  .lang-item .lang-name{font-family:'Fraunces',serif; font-size:18px;}
-  .lang-item .lang-level{font-size:12.5px; color:var(--gray-600); margin-top:4px; letter-spacing:.03em;}
+  .lang-item .lang-name{font-family:var(--serif); font-size:18px;}
+  .lang-item .lang-level{font-size:12.5px; color:var(--gray-700); margin-top:4px; letter-spacing:.03em;}
 
   /* ===================== expertise ===================== */
   .expertise-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:48px; }
   .expertise-item{ text-align:center; padding:0 6px; }
-  .expertise-item h3{ font-size:16px; font-weight:600; font-family:'Public Sans',sans-serif; letter-spacing:.06em; text-transform:uppercase; color:var(--gray-900); }
-  .expertise-item p{ margin-top:18px; font-size:14.5px; line-height:1.75; color:#3d3b36; }
+  .expertise-item h3{ font-size:16px; font-weight:700; font-family:var(--sans); letter-spacing:.06em; text-transform:uppercase; color:var(--navy); }
+  .expertise-item p{ margin-top:18px; font-size:14.5px; line-height:1.75; color:#3a3a3a; }
 
   /* ===================== commend / testimonial carousel ===================== */
   .commend-wrap{ max-width:var(--maxw-narrow); margin:0 auto; }
@@ -269,18 +285,18 @@
   .carousel-track{ display:flex; transition: transform .5s cubic-bezier(.22,.61,.36,1); }
   .commend-slide{ flex:0 0 100%; text-align:center; padding:0 8px; }
   .commend-slide blockquote{
-    margin:0; font-family:'Fraunces', serif; font-style:italic; font-weight:400;
-    font-size:clamp(18px,2.1vw,22px); line-height:1.65; color:var(--white);
+    margin:0; font-family:var(--serif); font-style:italic; font-weight:400;
+    font-size:clamp(15.5px,1.6vw,18px); line-height:1.7; color:var(--white);
   }
-  .commend-attrib{ margin-top:24px; font-size:13.5px; color:var(--gray-400); }
-  .commend-attrib .name{ color:var(--white); font-weight:600; font-family:'Public Sans',sans-serif; font-size:14px; }
-  .carousel-controls{ display:flex; align-items:center; justify-content:center; gap:22px; margin-top:36px; }
+  .commend-attrib{ margin-top:22px; font-size:13px; color:var(--gray-300); }
+  .commend-attrib .name{ color:var(--white); font-weight:700; font-family:var(--sans); font-size:13.5px; }
+  .carousel-controls{ display:flex; align-items:center; justify-content:center; gap:22px; margin-top:32px; }
   .car-arrow{
     width:36px; height:36px; border-radius:50%; border:1px solid var(--line-dark); background:none;
     color:var(--gray-300); display:flex; align-items:center; justify-content:center; cursor:pointer;
     transition:background .25s ease, color .25s ease, border-color .25s ease;
   }
-  .car-arrow:hover{ background:var(--white); color:var(--gray-950); border-color:var(--white); }
+  .car-arrow:hover{ background:var(--white); color:var(--navy); border-color:var(--white); }
   .car-arrow svg{width:15px;height:15px;}
   .car-dots{ display:flex; gap:8px; }
   .car-dots button{
@@ -289,18 +305,18 @@
   }
   .car-dots button.active{ background:var(--white); transform:scale(1.3); }
 
-  .refs-title{ margin-top:96px; text-align:center; font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--gray-400); margin-bottom:32px; }
+  .refs-title{ margin-top:88px; text-align:center; font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--gray-300); margin-bottom:32px; }
   .refs-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line-dark); border:1px solid var(--line-dark); max-width:var(--maxw); margin:0 auto; }
-  .ref-card{ background:var(--gray-950); padding:26px 22px; text-align:center; transition:background .3s ease; }
-  .ref-card:hover{background:var(--gray-900);}
-  .ref-card .ref-name{font-family:'Fraunces',serif; font-size:16.5px; color:var(--white);}
-  .ref-card .ref-role{font-size:12.5px; color:var(--gray-400); margin-top:5px;}
+  .ref-card{ background:var(--navy); padding:26px 22px; text-align:center; transition:background .3s ease; }
+  .ref-card:hover{background:var(--navy-2);}
+  .ref-card .ref-name{font-family:var(--serif); font-size:16.5px; color:var(--white);}
+  .ref-card .ref-role{font-size:12.5px; color:var(--gray-300); margin-top:5px;}
   .ref-card .ref-org{font-size:12px; color:var(--gray-500); margin-top:2px;}
-  .ref-card .ref-phone{font-size:12.5px; color:var(--gray-300); margin-top:10px; letter-spacing:.02em;}
+  .ref-card .ref-phone{font-size:12.5px; color:var(--gray-200); margin-top:10px; letter-spacing:.02em;}
 
   /* ===================== portfolio ===================== */
   .portfolio-intro{ max-width:var(--maxw-narrow); margin:0 auto; text-align:center; }
-  .portfolio-intro p{ font-size:16px; line-height:1.8; color:#3d3b36; }
+  .portfolio-intro p{ font-size:16px; line-height:1.8; color:#3a3a3a; }
   .portfolio-intro p + p{margin-top:16px;}
   .portfolio-intro .btn-row{ margin-top:32px; }
   .portfolio-grid{ margin-top:64px; display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--line); }
@@ -309,26 +325,26 @@
   .pf-card .pf-img img{width:100%; height:100%; object-fit:cover; transition:transform .6s cubic-bezier(.22,.61,.36,1);}
   .pf-card:hover .pf-img img{transform:scale(1.06);}
   .pf-card .pf-body{padding:26px 24px 32px;}
-  .pf-card h3{font-size:17px; font-weight:600; font-family:'Public Sans',sans-serif; letter-spacing:.04em; text-transform:uppercase;}
-  .pf-card p{font-size:13.5px; color:#4c4a44; margin-top:9px; line-height:1.7;}
+  .pf-card h3{font-size:17px; font-weight:700; font-family:var(--sans); letter-spacing:.04em; text-transform:uppercase;}
+  .pf-card p{font-size:13.5px; color:#4a4a4a; margin-top:9px; line-height:1.7;}
 
   /* ===================== contact ===================== */
   .contact-wrap{ max-width:var(--maxw-narrow); margin:0 auto; text-align:center; }
-  .contact-wrap p.lead{ font-size:15.5px; color:var(--gray-400); max-width:44ch; margin:14px auto 0; }
+  .contact-wrap p.lead{ font-size:15.5px; color:var(--gray-300); max-width:40ch; margin:14px auto 0; }
   .contact-chips{ margin-top:44px; display:flex; justify-content:center; flex-wrap:wrap; gap:14px; }
   .contact-chip{
     display:flex; flex-direction:column; gap:4px; text-decoration:none; color:var(--white);
     border:1px solid var(--line-dark); border-radius:var(--radius); padding:16px 26px; min-width:200px;
     transition:border-color .3s ease, transform .3s ease;
   }
-  .contact-chip:hover{ border-color:var(--gray-400); transform:translateY(-2px); }
+  .contact-chip:hover{ border-color:var(--green-lt); transform:translateY(-2px); }
   .contact-chip .cc-label{ font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gray-500); }
   .contact-chip .cc-value{ font-size:14.5px; }
   .contact-social{ margin-top:48px; display:flex; justify-content:center; }
 
   footer{
     margin-top:80px; padding-top:28px; border-top:1px solid var(--line-dark);
-    display:flex; justify-content:center; gap:24px; font-size:12px; color:var(--gray-500); flex-wrap:wrap;
+    display:flex; justify-content:center; font-size:12px; color:var(--gray-500);
   }
 
   /* ===================== responsive ===================== */
@@ -339,10 +355,11 @@
     .section-inner{padding:0 24px;}
     .section{padding:72px 0;}
     .hero-main{grid-template-columns:1fr; gap:28px;}
-    .hero-portrait img{min-height:320px;}
+    .hero-portrait{min-height:320px;}
     .hero-card{padding:36px 28px;}
     .hero-fields{grid-template-columns:1fr 1fr;}
-    .tl-item, .edu-head{grid-template-columns:1fr; gap:10px;}
+    :root{ --tl-years-w:100px; --tl-gap:14px; --tl-spine-w:14px; }
+    .tl-years, .edu-years{ font-size:13px; }
     .skills-grid{grid-template-columns:1fr; gap:36px;}
     .expertise-grid{grid-template-columns:1fr; gap:44px;}
     .refs-grid{grid-template-columns:repeat(2,1fr);}
@@ -354,7 +371,7 @@
 <body>
 
 <nav class="site-nav" id="siteNav">
-  <a class="nav-name" href="#top">Mike Armawa</a>
+  <a class="nav-logo" href="#top"><img src="assets/logo-landscape.png" alt="Mike Armawa"></a>
   <ul class="nav-tabs" id="navTabs">
     <li><a href="#experience">Experience</a></li>
     <li><a href="#education">Education</a></li>
@@ -391,8 +408,7 @@
         </div>
         <div class="hero-card reveal">
           <div class="hero-mark">
-            <span class="mono">MA</span>
-            <span class="wordmark">Mike Armawa</span>
+            <span class="logo-chip"><img src="assets/logo-mark.png" alt="Mike Armawa logo"></span>
           </div>
           <div class="hero-role">Hospitality — Sales &amp; Marketing — Creative Content</div>
           <div class="hero-fields">
@@ -449,9 +465,9 @@
         <p>Dynamic hospitality professional with expertise in marketing, digital content creation, and guest experience management. International experience in the United States brings a strong global perspective and adaptability to high-performance, fast-paced environments. Proven ability to deliver impactful guest experiences through a combination of creativity, precision, and strategic execution.</p>
         <p>Skilled in leveraging digital platforms and emerging technologies to enhance brand presence and drive engagement. Recognized for working effectively both independently and within cross-functional teams to achieve measurable results. Committed to continuous growth and innovation, with a focus on contributing to forward-thinking organizations that prioritize excellence, creativity, and long-term development.</p>
         <div class="about-cta btn-row">
-          <a class="btn on-light solid" href="https://linktr.ee/mikearmawa" target="_blank" rel="noopener">Link Master</a>
-          <a class="btn on-light" href="https://mikearmawa.blogspot.com/" target="_blank" rel="noopener">Website</a>
-          <a class="btn on-light" href="/portfolio/">Portfolio</a>
+          <a class="btn" href="https://linktr.ee/mikearmawa" target="_blank" rel="noopener">Link Master</a>
+          <a class="btn" href="https://mikearmawa.blogspot.com/" target="_blank" rel="noopener">Website</a>
+          <a class="btn" href="/portfolio/">Portfolio</a>
         </div>
       </div>
     </div>
@@ -468,6 +484,7 @@
 
         <div class="tl-item">
           <div class="tl-years">Mar 2025 — Present</div>
+          <div class="tl-spine"><span class="tl-dot"></span></div>
           <div class="tl-role">
             <h3>Graphics &amp; Content Marketing Manager</h3>
             <div class="tl-company">Soori Bali, Indonesia</div>
@@ -483,6 +500,7 @@
 
         <div class="tl-item">
           <div class="tl-years">Apr 2023 — Mei 2024</div>
+          <div class="tl-spine"><span class="tl-dot"></span></div>
           <div class="tl-role">
             <h3>Marketing Creative Contents &amp; Rooms</h3>
             <div class="tl-company">The Ritz-Carlton Bacara, California USA</div>
@@ -496,6 +514,7 @@
 
         <div class="tl-item">
           <div class="tl-years">2022 — Present</div>
+          <div class="tl-spine"><span class="tl-dot"></span></div>
           <div class="tl-role">
             <h3>Freelance</h3>
             <div class="tl-company">Freelancer</div>
@@ -508,6 +527,7 @@
 
         <div class="tl-item">
           <div class="tl-years">Jun 2021 — Apr 2023</div>
+          <div class="tl-spine"><span class="tl-dot"></span></div>
           <div class="tl-role">
             <h3>Marketing Communications &amp; Digital Creative</h3>
             <div class="tl-company">Six Senses Uluwatu, Bali Indonesia</div>
@@ -523,6 +543,7 @@
 
         <div class="tl-item">
           <div class="tl-years">Apr 2019 — Apr 2020</div>
+          <div class="tl-spine"><span class="tl-dot"></span></div>
           <div class="tl-role">
             <h3>Hotel Butler</h3>
             <div class="tl-company">St. Regis Bal Harbour, Miami, USA</div>
@@ -538,6 +559,7 @@
 
         <div class="tl-item">
           <div class="tl-years">Jan — Apr 2019</div>
+          <div class="tl-spine"><span class="tl-dot"></span></div>
           <div class="tl-role">
             <h3>Front Office</h3>
             <div class="tl-company">Sofitel Nusa Dua Beach Resort, Bali Indonesia</div>
@@ -559,24 +581,25 @@
       <div class="edu-block reveal">
         <div class="edu-head">
           <div class="edu-years">2017 — 2022</div>
-          <div>
-            <h3>Bachelor's Degree — Hospitality Management <span style="font-size:13px;color:var(--gray-600);font-weight:600;">(GPA 3.72)</span></h3>
+          <div class="edu-spine"><span class="tl-dot"></span></div>
+          <div class="edu-body-col">
+            <h3>Bachelor's Degree — Hospitality Management <span style="font-size:13px;color:var(--gray-700);font-weight:700;">(GPA 3.72)</span></h3>
             <div class="edu-school">Politeknik Pariwisata Bali</div>
-          </div>
-        </div>
-        <div class="edu-body">
-          During my studies, I gained solid knowledge across key hotel management areas: restaurant and bar operations, room division, culinary, sales &amp; marketing, HR, accounting, and revenue management.
-        </div>
-        <div class="edu-projects">
-          <div class="edu-project">
-            <h4>Re Opening Project — General Manager</h4>
-            <p>As project leader for the ADH D class team, I led the development of a comprehensive reopening plan for Akana Boutique Hotel Sanur. We collaborated with hotel management to cover business model canvas, SWOT analysis, forecasting, P&amp;L, ROA, and expense management. The project was completed in six months and presented in a final seminar.</p>
-            <a href="https://drive.google.com/file/d/1xmmGD1dA2hmt0azGiF4mVg3OaQm7CsuL/view?usp=sharing" target="_blank" rel="noopener">Explore Our Project →</a>
-          </div>
-          <div class="edu-project">
-            <h4>Brand New Concept — Director of Sales &amp; Marketing</h4>
-            <p>Final management application project, I served as Director of Sales &amp; Marketing for a new hotel concept, Zivoni. Over five months, we conducted detailed market and brand planning, consulting experts, architects, and industry leaders. I led brand development, marketing strategy, brand book creation, and coordinated with travel agents and OTAs, aligning plans with the hotel's pre-opening timeline and financial forecasts.</p>
-            <a href="https://linktr.ee/adhd2018" target="_blank" rel="noopener">Explore Our Project →</a>
+            <div class="edu-body">
+              During my studies, I gained solid knowledge across key hotel management areas: restaurant and bar operations, room division, culinary, sales &amp; marketing, HR, accounting, and revenue management.
+            </div>
+            <div class="edu-projects">
+              <div class="edu-project">
+                <h4>Re Opening Project — General Manager</h4>
+                <p>As project leader for the ADH D class team, I led the development of a comprehensive reopening plan for Akana Boutique Hotel Sanur. We collaborated with hotel management to cover business model canvas, SWOT analysis, forecasting, P&amp;L, ROA, and expense management. The project was completed in six months and presented in a final seminar.</p>
+                <a href="https://drive.google.com/file/d/1xmmGD1dA2hmt0azGiF4mVg3OaQm7CsuL/view?usp=sharing" target="_blank" rel="noopener">Explore Our Project →</a>
+              </div>
+              <div class="edu-project">
+                <h4>Brand New Concept — Director of Sales &amp; Marketing</h4>
+                <p>Final management application project, I served as Director of Sales &amp; Marketing for a new hotel concept, Zivoni. Over five months, we conducted detailed market and brand planning, consulting experts, architects, and industry leaders. I led brand development, marketing strategy, brand book creation, and coordinated with travel agents and OTAs, aligning plans with the hotel's pre-opening timeline and financial forecasts.</p>
+                <a href="https://linktr.ee/adhd2018" target="_blank" rel="noopener">Explore Our Project →</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -591,11 +614,11 @@
         <h2 class="section-heading">Career Journey</h2>
       </div>
       <div class="clients-row reveal">
-        <img src="https://static.wixstatic.com/media/91b7dc_e83ae42f1d964ea8b3725d2d28c4db58~mv2.png/v1/fill/w_142,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Sofitel%20Nusa%20Dua.png" alt="Sofitel Nusa Dua">
-        <img src="https://static.wixstatic.com/media/91b7dc_ce06142387a9409d9cbeb41fc1b739b7~mv2.png/v1/fill/w_111,h_111,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/St_%20Regis%20Miami.png" alt="St. Regis Miami">
-        <img src="https://static.wixstatic.com/media/91b7dc_672aede8905e46099b01dfd7434a8cb9~mv2.png/v1/fill/w_119,h_111,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Six%20Senses%20Uluwatu.png" alt="Six Senses Uluwatu">
-        <img src="https://static.wixstatic.com/media/91b7dc_2c4a8013a7884cecb362f5a0654c252a~mv2.png/v1/fill/w_162,h_86,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/91b7dc_2c4a8013a7884cecb362f5a0654c252a~mv2.png" alt="The Ritz-Carlton Bacara">
-        <img src="https://static.wixstatic.com/media/91b7dc_5647eec358c34122bc6d8c4b9abd8e0f~mv2.png/v1/fill/w_119,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo_Soori%20Bali_Grey%20with%20transparent%20bk.png" alt="Soori Bali">
+        <span class="client-logo"><img src="https://static.wixstatic.com/media/91b7dc_e83ae42f1d964ea8b3725d2d28c4db58~mv2.png/v1/fill/w_142,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Sofitel%20Nusa%20Dua.png" alt="Sofitel Nusa Dua"></span>
+        <span class="client-logo"><img src="https://static.wixstatic.com/media/91b7dc_ce06142387a9409d9cbeb41fc1b739b7~mv2.png/v1/fill/w_111,h_111,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/St_%20Regis%20Miami.png" alt="St. Regis Miami"></span>
+        <span class="client-logo"><img src="https://static.wixstatic.com/media/91b7dc_672aede8905e46099b01dfd7434a8cb9~mv2.png/v1/fill/w_119,h_111,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Six%20Senses%20Uluwatu.png" alt="Six Senses Uluwatu"></span>
+        <span class="client-logo"><img src="https://static.wixstatic.com/media/91b7dc_2c4a8013a7884cecb362f5a0654c252a~mv2.png/v1/fill/w_162,h_86,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/91b7dc_2c4a8013a7884cecb362f5a0654c252a~mv2.png" alt="The Ritz-Carlton Bacara"></span>
+        <span class="client-logo"><img src="https://static.wixstatic.com/media/91b7dc_5647eec358c34122bc6d8c4b9abd8e0f~mv2.png/v1/fill/w_119,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo_Soori%20Bali_Grey%20with%20transparent%20bk.png" alt="Soori Bali"></span>
       </div>
     </div>
   </section>
@@ -738,7 +761,7 @@
         <p>Welcome to my portfolio. I am a Sales &amp; Marketing professional with a strong focus on creative content and brand development. I bring experience in market analysis, brand positioning, and executing effective marketing strategies that support business growth.</p>
         <p>Complemented by hands-on expertise in video and photo editing, graphic design, and social media management, I create visually compelling content that aligns with brand objectives and engages target audiences.</p>
         <div class="btn-row">
-          <a class="btn on-light solid" href="/portfolio/">Explore full portfolio</a>
+          <a class="btn cta" href="/portfolio/">Explore full portfolio</a>
         </div>
       </div>
 
@@ -774,7 +797,7 @@
       <div class="contact-wrap reveal">
         <p class="section-label">Contact</p>
         <h2 class="section-heading">Get in touch</h2>
-        <p class="lead">Bali, Indonesia. Open to opportunities across luxury hospitality and brand marketing.</p>
+        <p class="lead">Based in Bali, Indonesia — open to new opportunities in luxury hospitality and brand marketing.</p>
         <div class="contact-chips">
           <a class="contact-chip" href="mailto:mike.armawa21@gmail.com">
             <span class="cc-label">Email</span><span class="cc-value">mike.armawa21@gmail.com</span>
@@ -808,7 +831,6 @@
       </div>
       <footer>
         <span>© <span id="year"></span> Mike Armawa</span>
-        <span>Built without Wix</span>
       </footer>
     </div>
   </section>
