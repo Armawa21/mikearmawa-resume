@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mike Armawa — Hospitality, Sales &amp; Marketing, Creative Content</title>
 <meta name="description" content="Mike Armawa — Graphics & Content Marketing Manager, Soori Bali. Hospitality, Sales & Marketing, Creative Content.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -103,7 +105,7 @@
     border-bottom-color: var(--line-dark); box-shadow: 0 8px 24px rgba(0,0,0,0.16);
   }
   .nav-logo{ display:flex; align-items:center; text-decoration:none; }
-  .nav-logo img{ height:26px; width:auto; }
+  .nav-logo img{ height:36px; width:auto; }
   .nav-tabs{display:flex; gap:32px; list-style:none; margin:0; padding:0;}
   .nav-tabs a{
     position:relative; text-decoration:none; color:rgba(255,255,255,0.72);
@@ -171,12 +173,8 @@
     padding:48px 44px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
     align-self:stretch;
   }
-  .hero-mark{ display:flex; flex-direction:column; align-items:center; gap:14px; margin-bottom:26px; }
-  .hero-mark .logo-chip{
-    background:var(--white); border-radius:16px; padding:14px 18px;
-    display:inline-flex; align-items:center; justify-content:center;
-  }
-  .hero-mark .logo-chip img{ height:64px; width:auto; display:block; }
+  .hero-mark{ margin-bottom:26px; }
+  .hero-mark img{ height:84px; width:auto; display:block; filter: drop-shadow(0 2px 10px rgba(0,0,0,0.35)); }
   .hero-role{ font-size:14.5px; color:var(--gray-300); padding-bottom:26px; border-bottom:1px solid var(--line-dark); margin-bottom:26px; width:100%; }
   .hero-fields{ display:grid; grid-template-columns:1fr 1fr; gap:24px 28px; width:100%; text-align:center; }
   .hero-fields .field .fl{ font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gray-500); margin-bottom:6px; }
@@ -241,11 +239,11 @@
   .edu-project a{display:inline-block; margin-top:10px; font-size:12.5px; color:var(--green); text-decoration:underline; text-underline-offset:3px;}
 
   /* ===================== career journey / clients ===================== */
-  .clients-row{ display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:52px; }
-  .client-logo{ height:44px; display:flex; align-items:center; justify-content:center; }
+  .clients-row{ display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:48px; }
+  .client-logo{ width:150px; height:56px; display:flex; align-items:center; justify-content:center; }
   .client-logo img{
-    max-height:44px; max-width:150px; width:auto; height:auto;
-    filter: brightness(0) invert(1); opacity:.82;
+    max-height:100%; max-width:100%; width:auto; height:auto; object-fit:contain;
+    filter: brightness(0) invert(1); opacity:.85;
     transition:opacity .3s ease;
   }
   .client-logo img:hover{ opacity:1; }
@@ -282,8 +280,8 @@
   .commend-wrap{ max-width:var(--maxw-narrow); margin:0 auto; }
   .carousel{ position:relative; }
   .carousel-track-clip{ overflow:hidden; }
-  .carousel-track{ display:flex; transition: transform .5s cubic-bezier(.22,.61,.36,1); }
-  .commend-slide{ flex:0 0 100%; text-align:center; padding:0 8px; }
+  .carousel-track{ display:flex; transition: transform .6s cubic-bezier(.22,.61,.36,1); align-items:flex-start; }
+  .commend-slide{ flex:0 0 100%; text-align:center; padding:0 8px; min-height:200px; }
   .commend-slide blockquote{
     margin:0; font-family:var(--serif); font-style:italic; font-weight:400;
     font-size:clamp(15.5px,1.6vw,18px); line-height:1.7; color:var(--white);
@@ -330,8 +328,8 @@
 
   /* ===================== contact ===================== */
   .contact-wrap{ max-width:var(--maxw-narrow); margin:0 auto; text-align:center; }
-  .contact-wrap p.lead{ font-size:15.5px; color:var(--gray-300); max-width:40ch; margin:14px auto 0; }
-  .contact-chips{ margin-top:44px; display:flex; justify-content:center; flex-wrap:wrap; gap:14px; }
+  .contact-wrap p.lead{ font-size:15.5px; color:var(--gray-300); max-width:44ch; margin:12px auto 0; }
+  .contact-chips{ margin-top:40px; display:flex; justify-content:center; flex-wrap:wrap; gap:14px; }
   .contact-chip{
     display:flex; flex-direction:column; gap:4px; text-decoration:none; color:var(--white);
     border:1px solid var(--line-dark); border-radius:var(--radius); padding:16px 26px; min-width:200px;
@@ -340,10 +338,11 @@
   .contact-chip:hover{ border-color:var(--green-lt); transform:translateY(-2px); }
   .contact-chip .cc-label{ font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gray-500); }
   .contact-chip .cc-value{ font-size:14.5px; }
-  .contact-social{ margin-top:48px; display:flex; justify-content:center; }
+  .contact-social{ margin-top:36px; display:flex; justify-content:center; }
 
+  #contact{ padding-bottom:44px; }
   footer{
-    margin-top:80px; padding-top:28px; border-top:1px solid var(--line-dark);
+    margin-top:40px; padding-top:20px; border-top:1px solid var(--line-dark);
     display:flex; justify-content:center; font-size:12px; color:var(--gray-500);
   }
 
@@ -408,7 +407,7 @@
         </div>
         <div class="hero-card reveal">
           <div class="hero-mark">
-            <span class="logo-chip"><img src="assets/logo-mark.png" alt="Mike Armawa logo"></span>
+            <img src="assets/logo-mark.png" alt="Mike Armawa logo">
           </div>
           <div class="hero-role">Hospitality — Sales &amp; Marketing — Creative Content</div>
           <div class="hero-fields">
@@ -468,7 +467,7 @@
         <div class="about-cta btn-row">
           <a class="btn" href="https://linktr.ee/mikearmawa" target="_blank" rel="noopener">Link Master</a>
           <a class="btn" href="https://mikearmawa.blogspot.com/" target="_blank" rel="noopener">Blogs Site</a>
-          <a class="btn" href="https://mikearmawa-resume.pages.dev/portfolio/Mike_Armawa_CV.pdf">Download CV</a>
+          <a class="btn" href="/portfolio/Mike_Armawa_CV.pdf">Download CV</a>
         </div>
       </div>
     </div>
@@ -636,10 +635,10 @@
           <h3>Advanced</h3>
           <ul>
             <li>Microsoft Application</li>
-            <li>Digital Marketing & Performance</li>
+            <li>Digital Marketing &amp; Performance</li>
             <li>Media, PR &amp; Partnership Coordination</li>
             <li>PMS Opera &amp; Galaxy Lightspeed</li>
-        </ul>
+          </ul>
         </div>
         <div class="skills-col">
           <h3>Proficient</h3>
@@ -700,25 +699,32 @@
         <div class="carousel" id="commendCarousel">
           <div class="carousel-track-clip">
             <div class="carousel-track" id="commendTrack">
+
               <div class="commend-slide">
-      
                 <blockquote>"Mike goes out of his way to assist me with marketing efforts and creative videography for our social media. He takes time out of his day to help me with editing, creating content and making reels, and I could not be more grateful for his help and expertise in videography and content creation. Mike enlivens service Value #7 by helping the marketing team with lateral service — he drastically improves our social media channels with his efforts."</blockquote>
                 <div class="commend-attrib"><span class="name">Ellie Turner</span> — Marketing Manager, 2024<br>The Ritz-Carlton Bacara, Santa Barbara</div>
-                
-                <blockquote>"This past quarter Mike went above and beyond to make a particular evening incredibly special for our guests and our Ladies and Gentlemen. Mike made the menu look like a Spotify playlist for "Chef Christine's Greatest Hits" and he shot and edited the appreciation video as well. Guests were so impressed with the special menus that night and Chef was so surprised by the videol Mike went above and beyond to make the night memorable. He also used his past marketing experience to make everything look incredibly professional."</blockquote>
+              </div>
+
+              <div class="commend-slide">
+                <blockquote>"This past quarter Mike went above and beyond to make a particular evening incredibly special for our guests and our Ladies and Gentlemen. Mike made the menu look like a Spotify playlist for "Chef Christine's Greatest Hits" and he shot and edited the appreciation video as well. Guests were so impressed with the special menus that night and Chef was so surprised by the video! Mike went above and beyond to make the night memorable. He also used his past marketing experience to make everything look incredibly professional."</blockquote>
                 <div class="commend-attrib"><span class="name">Michelle Sun</span> — Front of the House Manager, 2024<br>The Ritz-Carlton Bacara, Santa Barbara</div>
-                
+              </div>
+
+              <div class="commend-slide">
                 <blockquote>"Mike has excellent communication skills, social media savvy and current with changes in marketing trends and activities. Mike can work independently and is able to follow through to ensure that the job gets done. He is flexible and willing to work on any project that is assigned to him."</blockquote>
                 <div class="commend-attrib"><span class="name">Riska Wandira</span> — Marketing Manager, 2023<br>Six Senses Uluwatu, Bali</div>
-                
+              </div>
+
+              <div class="commend-slide">
                 <blockquote>"Well deserved as best trainee! Explore your talent and seize your potential, Mike. I hope you embrace the many new learnings that you can take on from all the opportunities provided. You know how and why Marketing truly matters in our brand and property."</blockquote>
                 <div class="commend-attrib"><span class="name">Angga Adhitya Fritz Aradhana</span> — Director of Marketing and Communications, 2021<br>Six Senses Uluwatu, Bali</div>
-            
-                <blockquote>"Well deserved as best trainee! Explore your talent and seize your potential, Mike. I hope you embrace the many new learnings that you can take on from all the opportunities provided. You know how and why Marketing truly matters in our brand and property."</blockquote>
-                <div class="commend-attrib"><span class="name">Anna Wesierska</span> — Guest Recognition Manager, 2020<br>St. Regis Bal Harbour, Miami</div>          
-               
-                
               </div>
+
+              <div class="commend-slide">
+                <blockquote>"Well deserved as best trainee! Explore your talent and seize your potential, Mike. I hope you embrace the many new learnings that you can take on from all the opportunities provided. You know how and why Marketing truly matters in our brand and property."</blockquote>
+                <div class="commend-attrib"><span class="name">Anna Wesierska</span> — Guest Recognition Manager, 2020<br>St. Regis Bal Harbour, Miami</div>
+              </div>
+
             </div>
           </div>
           <div class="carousel-controls">
@@ -735,12 +741,12 @@
 
       <p class="refs-title reveal">References</p>
       <div class="refs-grid reveal-stagger">
-                <div class="ref-card">
+        <div class="ref-card">
           <div class="ref-name">Emilie Lureau</div>
           <div class="ref-role">MARCOM Manager</div>
           <div class="ref-org">Soori Bali</div>
           <div class="ref-phone">+33 6 51 42 54 09</div>
-        </div>  
+        </div>
         <div class="ref-card">
           <div class="ref-name">Ellie Turner</div>
           <div class="ref-role">Marketing Manager</div>
@@ -758,7 +764,6 @@
           <div class="ref-role">MARCOM Manager</div>
           <div class="ref-org">Six Senses Uluwatu, Bali</div>
           <div class="ref-phone">+62 811-3992-210</div>
-        </div>
         </div>
       </div>
     </div>
@@ -811,10 +816,9 @@
     <div class="section-inner">
       <div class="contact-wrap reveal">
         <p class="section-label">Contact</p>
-        <h2 class="section-heading">Let’s Connect</h2>
-        <p class="lead">I’m always interested in meeting people, brands, and teams creating something worth remembering.</p>
-        <p class="lead">If you have an idea, a project, or an opportunity to explore, let’s talk.</p>
-        <p class="lead">Bali, Indonesia · Available Worldwide</p>
+        <h2 class="section-heading">Let's Connect</h2>
+        <p class="lead">I'm always interested in meeting people, brands, and teams creating something worth remembering.</p>
+        <p class="lead">If you have an idea, a project, or an opportunity to explore, let's talk.</p>
         <div class="contact-chips">
           <a class="contact-chip" href="mailto:mike.armawa21@gmail.com">
             <span class="cc-label">Email</span><span class="cc-value">mike.armawa21@gmail.com</span>
@@ -893,7 +897,7 @@
   }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
   document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => revealObserver.observe(el));
 
-  /* ---- commend testimonial carousel ---- */
+  /* ---- commend testimonial carousel (auto-advance + manual controls) ---- */
   (function(){
     const track = document.getElementById('commendTrack');
     const slides = track.children;
@@ -901,11 +905,13 @@
     const prevBtn = document.getElementById('carPrev');
     const nextBtn = document.getElementById('carNext');
     let index = 0;
+    let timer = null;
+    const AUTO_MS = 6000;
 
     for (let i=0; i<slides.length; i++){
       const dot = document.createElement('button');
       if (i===0) dot.classList.add('active');
-      dot.addEventListener('click', () => goTo(i));
+      dot.addEventListener('click', () => { goTo(i); restart(); });
       dotsWrap.appendChild(dot);
     }
     const dots = dotsWrap.children;
@@ -915,10 +921,23 @@
       track.style.transform = 'translateX(-' + (index*100) + '%)';
       for (let j=0;j<dots.length;j++) dots[j].classList.toggle('active', j===index);
     }
-    prevBtn.addEventListener('click', () => goTo(index-1));
-    nextBtn.addEventListener('click', () => goTo(index+1));
+    function next(){ goTo(index+1); }
+    function start(){ if (slides.length > 1) timer = setInterval(next, AUTO_MS); }
+    function stop(){ if (timer) clearInterval(timer); }
+    function restart(){ stop(); start(); }
 
-    if (slides.length <= 1){ prevBtn.style.display='none'; nextBtn.style.display='none'; }
+    prevBtn.addEventListener('click', () => { goTo(index-1); restart(); });
+    nextBtn.addEventListener('click', () => { goTo(index+1); restart(); });
+
+    if (slides.length <= 1){
+      prevBtn.style.display='none';
+      nextBtn.style.display='none';
+    } else {
+      const carousel = document.getElementById('commendCarousel');
+      carousel.addEventListener('mouseenter', stop);
+      carousel.addEventListener('mouseleave', start);
+      start();
+    }
   })();
 </script>
 
