@@ -95,10 +95,12 @@
   .chip.active{background:var(--green);border-color:var(--green);color:var(--paper);}
 
   /* ---- Grid / cards ---- */
-  .grid{column-count:3;column-gap:22px;padding-bottom:100px;}
-  @media(max-width:980px){.grid{column-count:2;}}
-  @media(max-width:600px){.grid{column-count:1;}}
-  .card{break-inside:avoid;margin-bottom:22px;}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding-bottom:100px;}
+  @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){.grid{grid-template-columns:1fr;}}
+  .card{margin-bottom:0;}
+  .grid.videography-yt{grid-template-columns:repeat(2,1fr);margin-top:22px;}
+  @media(max-width:600px){.grid.videography-yt{grid-template-columns:1fr;}}
 
   /* photographic cards: fixed ratio, text burned into the image */
   .card.photo .frame{
@@ -140,10 +142,11 @@
 
   /* editorial design cards: 2-column grid, 4:5 crop, caption below the image */
   .grid.editorial{
-    column-count:unset;display:grid;grid-template-columns:1fr 1fr;gap:40px 36px;
-    padding-bottom:10px;max-width:900px;margin:0 auto;
+    column-count:unset;display:grid;grid-template-columns:repeat(3,1fr);gap:40px 36px;
+    padding-bottom:10px;margin:0 auto;
   }
-  .card.doc{display:block;break-inside:auto;cursor:pointer;padding:0;border-bottom:none;margin-bottom:0;}
+  @media(max-width:980px){.grid.editorial{grid-template-columns:repeat(2,1fr);}}
+  .card.doc{display:block;cursor:pointer;padding:0;border-bottom:none;margin-bottom:0;}
   .card.doc .frame{
     width:100%;aspect-ratio:4/5;overflow:hidden;
     background:var(--paper-dim);border:1px solid var(--line);cursor:pointer;
@@ -245,6 +248,7 @@
       <button class="chip" data-filter="Personal Content">Personal Content</button>
     </div>
     <div class="grid" id="grid-videography"></div>
+    <div class="grid videography-yt" id="grid-videography-yt"></div>
   </div>
 </section>
 
@@ -372,6 +376,18 @@ function cardHTML(item){
 }
 
 function render(section){
+  if (section === 'videography') {
+    const items = ITEMS.filter(i => i.section === section);
+    const main = items.filter(i => i.kind !== 'youtube');
+    const yt = items.filter(i => i.kind === 'youtube');
+    const mainContainer = document.getElementById('grid-videography');
+    const ytContainer = document.getElementById('grid-videography-yt');
+    mainContainer.innerHTML = main.map(cardHTML).join('');
+    ytContainer.innerHTML = yt.map(cardHTML).join('');
+    attachCardEvents(mainContainer);
+    attachCardEvents(ytContainer);
+    return;
+  }
   const container = document.getElementById('grid-' + section);
   const items = ITEMS.filter(i => i.section === section);
   container.innerHTML = items.map(cardHTML).join('');
@@ -390,12 +406,19 @@ function attachCardEvents(container){
 }
 
 function applyFilter(group, value){
-  const container = document.getElementById('grid-' + group);
-  container.querySelectorAll('.card').forEach(card => {
-    const key = card.getAttribute('data-key');
-    const item = ITEMS.find(i => i.key === key);
-    const show = value === 'all' || item.sub === value;
-    card.style.display = show ? '' : 'none';
+  const containers = group === 'videography'
+    ? [document.getElementById('grid-videography'), document.getElementById('grid-videography-yt')]
+    : [document.getElementById('grid-' + group)];
+  containers.forEach(container => {
+    let anyVisible = false;
+    container.querySelectorAll('.card').forEach(card => {
+      const key = card.getAttribute('data-key');
+      const item = ITEMS.find(i => i.key === key);
+      const show = value === 'all' || item.sub === value;
+      card.style.display = show ? '' : 'none';
+      if (show) anyVisible = true;
+    });
+    container.style.display = anyVisible ? '' : 'none';
   });
 }
 
